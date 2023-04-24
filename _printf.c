@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	int count = 0;
 	va_list args;
 
+	if (!format)
+		return (-1);
+
 	va_start(args, format);
 
 	while (*format)
@@ -32,10 +35,7 @@ int _printf(const char *format, ...)
 				count += printf("%%");
 				break;
 			default:
-				printf("%%");
-				printf("%c", *format);
-				count += 2;
-				break;
+				return (-1);
 			}
 		}
 		else
