@@ -12,10 +12,8 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
-	
+
 	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	va_start(args, format);
 	while (*format)
@@ -39,10 +37,7 @@ int _printf(const char *format, ...)
 				count += printf("%d", va_arg(args, int));
 				break;
 			default:
-				putchar('%');
-				putchar(*format);
-				count += 2;
-				break;
+				return (-1);
 			}
 		}
 		else
