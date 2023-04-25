@@ -37,7 +37,10 @@ int _printf(const char *format, ...)
 				count += printf("%d", va_arg(args, int));
 				break;
 			default:
-				return (-1);
+				putchar('%');
+				putchar(*format);
+				count += 2;
+				break;
 			}
 		}
 		else
