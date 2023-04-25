@@ -120,7 +120,7 @@ int _printf(const char *format, ...)
 					char_printed_count = write_and_count(1, "%", 1, char_printed_count);
 					break;
 				default:
-					break;
+					return (-1);
 			}
 		}
 		else
