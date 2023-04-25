@@ -7,13 +7,12 @@
  * @format: character string with directives for formatting output
  * Return: number of characters printed (excluding null byte)
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
 
-	if (!format || (format[0] == '%' && !format[1]))
+	if (!format)
 		return (-1);
 	va_start(args, format);
 	while (*format)
