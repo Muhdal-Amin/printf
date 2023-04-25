@@ -35,7 +35,10 @@ int _printf(const char *format, ...)
 				count += printf("%%");
 				break;
 			default:
-				return (-1);
+				  printf("%%");
+				  printf("%c", *format);
+				  count += 2;
+				  break;
 			}
 		}
 		else
