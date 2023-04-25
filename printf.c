@@ -122,9 +122,6 @@ int _printf(const char *format, ...)
 					char_printed_count = write_and_count(1, "%", 1, char_printed_count);
 					break;
 				default:
-					putchar('%');
-					putchar(*format);
-					char_printed_count += 2;
 					break;
 			}
 		}
