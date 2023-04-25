@@ -98,7 +98,7 @@ int _printf(const char *format, ...)
 	int i = 0, char_printed_count = 0;
 	char c;
 
-	if (!format)
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	va_start(args, format);
 	while (format && format[i] != '\0')
